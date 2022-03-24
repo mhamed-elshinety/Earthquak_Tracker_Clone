@@ -2,8 +2,8 @@
 <resources>
     <!--these colors are theme colors of app-->
     <color name="color_primary" >#1E1E1E</color>
-    <color name="color_primary_dark">#1E1E1E</color>
-    <color name="color_secondary">#1F2024</color>
+    <color name="color_primary_dark">#1F2024</color>
+    <color name="color_secondary">#1E1E1E</color>
     <color name="color_accent">#D87944</color>
 
     <!-- these colors are levels of magnitude of earthquake colors-->

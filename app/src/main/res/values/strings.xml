@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Earthquake Tracker Clone</string>
+    <!-- tab layout titles -->
+    <string name="latest">Latest</string>
+    <string name="map">Map</string>
+    <string name="featured">Featured</string>
+    <string name="search">Search</string>
+
 </resources>
