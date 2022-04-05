@@ -6,7 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 
 import com.example.earthquaketrackerclone.R;
-import com.example.earthquaketrackerclone.pojo.Earthquake;
+import com.example.earthquaketrackerclone.pojo.EarthquakeModel;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     // adding an adapter to view pager and adjusting the TabLayout to work with it
     public void initializeViewPager(){
-        MainPagerAdapter adapter = new MainPagerAdapter(getSupportFragmentManager(),new ArrayList<Earthquake>());
+        MainPagerAdapter adapter = new MainPagerAdapter(getSupportFragmentManager(),new ArrayList<EarthquakeModel>());
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
     }

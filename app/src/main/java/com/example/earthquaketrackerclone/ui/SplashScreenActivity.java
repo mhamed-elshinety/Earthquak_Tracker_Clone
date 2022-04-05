@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.earthquaketrackerclone.R;
-import com.example.earthquaketrackerclone.other.Constants;
+import com.example.earthquaketrackerclone.data.Constants;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
