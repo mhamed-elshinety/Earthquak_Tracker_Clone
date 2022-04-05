@@ -5,5 +5,13 @@
     <string name="map">Map</string>
     <string name="featured">Featured</string>
     <string name="search">Search</string>
+    <string name="near_you">Near you</string>
+    <string name="significant_recently">Significant recently</string>
+    <string name="most_recent">Most recent</string>
+    <string name="see_all">See all</string>
+    <string name="location_flag">Location flag</string>
+    <string name="near_to">Near to</string>
+    <string name="today">Today</string>
+    <string name="days_ago">Days ago</string>
 
 </resources>

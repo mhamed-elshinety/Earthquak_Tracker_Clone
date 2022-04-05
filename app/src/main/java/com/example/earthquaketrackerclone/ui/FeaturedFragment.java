@@ -7,18 +7,18 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.example.earthquaketrackerclone.R;
-import com.example.earthquaketrackerclone.other.Constants;
-import com.example.earthquaketrackerclone.other.PagerFragmentParent;
-import com.example.earthquaketrackerclone.pojo.Earthquake;
+import com.example.earthquaketrackerclone.data.Constants;
+import com.example.earthquaketrackerclone.pojo.EarthquakeModel;
 import java.util.ArrayList;
 
-public class FeaturedFragment extends PagerFragmentParent {
+public class FeaturedFragment extends Fragment {
 
-    ArrayList<Earthquake> earthquakes;
+    ArrayList<EarthquakeModel> earthquakes;
 
-    public static FeaturedFragment newInstance(ArrayList<Earthquake> earthquakes){
+    public static FeaturedFragment newInstance(ArrayList<EarthquakeModel> earthquakes){
         FeaturedFragment fragment = new FeaturedFragment();
         Bundle args = new Bundle();
         args.putSerializable(Constants.KEY_EARTHQUAKES,earthquakes);
@@ -47,8 +47,11 @@ public class FeaturedFragment extends PagerFragmentParent {
 
 
     //define fragment fields override from PagerFragmentParent
-    @Override
     public void defineFields() {
-        this.earthquakes = (ArrayList<Earthquake>) getArguments().getSerializable(Constants.KEY_EARTHQUAKES);
+        this.earthquakes = (ArrayList<EarthquakeModel>) getArguments().getSerializable(Constants.KEY_EARTHQUAKES);
+    }
+
+    public void defineViews() {
+
     }
 }

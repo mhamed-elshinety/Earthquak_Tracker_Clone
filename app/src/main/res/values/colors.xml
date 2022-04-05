@@ -2,8 +2,8 @@
 <resources>
     <!--these colors are theme colors of app-->
     <color name="color_primary" >#1E1E1E</color>
-    <color name="color_primary_dark">#1F2024</color>
-    <color name="color_secondary">#1E1E1E</color>
+    <color name="color_primary_dark">#1E1E1E</color>
+    <color name="color_secondary">#1F2024</color>
     <color name="color_accent">#D87944</color>
 
     <!-- these colors are levels of magnitude of earthquake colors-->
@@ -11,5 +11,11 @@
     <color name="low_teal">#007877</color>  <!-- blue color for magnitudes greater than 2 -> 4 -->
     <color name="moderate_raw_umber">#553D01</color> <!-- blue color for magnitudes grater than 4 -> 5-->
     <color name="high_rust">#AD4220</color> <!-- blue color for magnitudes grater than 5 -->
+
+    <!-- these colors are for card view backgrounds -->
+    <color name="start_orange_burnt">#CC5610</color>
+    <color name="end_orange_vermilion">#DA462A</color>
+
+    <color name="battleship_gray">#989A9F</color>
 
 </resources>

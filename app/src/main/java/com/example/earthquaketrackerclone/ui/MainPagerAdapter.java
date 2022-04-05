@@ -7,16 +7,16 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.earthquaketrackerclone.R;
-import com.example.earthquaketrackerclone.other.Assistant;
-import com.example.earthquaketrackerclone.pojo.Earthquake;
+import com.example.earthquaketrackerclone.data.Assistant;
+import com.example.earthquaketrackerclone.pojo.EarthquakeModel;
 
 import java.util.ArrayList;
 
 public class MainPagerAdapter extends FragmentStatePagerAdapter {
 
-    private ArrayList<Earthquake> earthquakes;
+    private ArrayList<EarthquakeModel> earthquakes;
 
-    public MainPagerAdapter(@NonNull FragmentManager fm, ArrayList<Earthquake>earthquakes) {
+    public MainPagerAdapter(@NonNull FragmentManager fm, ArrayList<EarthquakeModel>earthquakes) {
         super(fm);
         this.earthquakes = earthquakes;
     }
@@ -27,7 +27,8 @@ public class MainPagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
          switch (position) {
             case 0:
-                return LatestTabFragment.newInstance(earthquakes);
+
+                return LatestTabFragment.newInstance();
             case 1:
                 return MapTabFragment.newInstance(earthquakes);
             case 2:

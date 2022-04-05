@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/significant_cv"
+    android:layout_width="@dimen/_165sdp"
+    android:layout_height="@dimen/_180sdp"
+    android:layout_marginStart="@dimen/_6sdp"
+    android:layout_marginEnd="@dimen/_6sdp"
+    app:cardCornerRadius="@dimen/_16sdp"
+    android:layout_marginBottom="@dimen/_8sdp"
+    app:layout_constraintTop_toBottomOf="@id/significant_recently_tv"
+    android:elevation="2dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_secondary"
+        android:textSize="@dimen/_16ssp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_10sdp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/flag_cv"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                app:cardCornerRadius="@dimen/_4ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/flag_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/united_nations"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/location_flag"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/mag_txv"
+                style="@style/TextAppearanceTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="5.0"
+                android:textColor="@color/high_rust"
+                app:layout_constraintBottom_toBottomOf="@id/flag_cv"
+                app:layout_constraintStart_toEndOf="@id/flag_cv"
+                app:layout_constraintTop_toTopOf="@id/flag_cv" />
+
+            <TextView
+                android:id="@+id/dis_txv"
+                style="@style/TextCard_Dis_Town"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="62 KM S OF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/flag_cv"
+                android:textColor="@color/battleship_gray"
+                android:textAllCaps="true"/>
+
+            <TextView
+                android:id="@+id/town_txv"
+                style="@style/TextCard_Dis_Town"
+                android:ellipsize="end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:text="Hualien City, Taiwan"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dis_txv"
+                android:maxLength="30"
+                />
+
+            <TextView
+                android:id="@+id/date_time_txv"
+                style="@style/TextCard_Dis_Town"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Mar 22, 2022 19:41"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/town_txv" />
+
+            <TextView
+                android:id="@+id/dur_days_txv"
+                style="@style/TextCard_Dis_Town"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="2 Days Ago"
+                android:textColor="@color/battleship_gray"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/date_time_txv" />
+
+            <ImageView
+                android:id="@+id/forward_btn_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_forward"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/source_txv"
+                style="@style/TextCard_Dis_Town"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USGS"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/high_rust"
+                android:textAllCaps="true"
+                android:letterSpacing="0.1"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</androidx.cardview.widget.CardView>

@@ -1,4 +1,4 @@
-package com.example.earthquaketrackerclone.other;
+package com.example.earthquaketrackerclone.data;
 
 import android.app.Application;
 import android.content.Context;
