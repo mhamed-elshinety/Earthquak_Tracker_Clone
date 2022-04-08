@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 
 import com.example.earthquaketrackerclone.R;
+import com.example.earthquaketrackerclone.adapters.MainPagerAdapter;
 import com.example.earthquaketrackerclone.pojo.EarthquakeModel;
 import com.google.android.material.tabs.TabLayout;
 

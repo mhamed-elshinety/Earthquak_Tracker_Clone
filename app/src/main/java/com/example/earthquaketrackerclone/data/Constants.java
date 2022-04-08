@@ -27,4 +27,18 @@ public abstract class Constants {
     public static final String KEY_MOST_RECENT = "com.example.earthquaketrackerclone.pojo.MostSignificant" ;
     public static final String KEY_SIGNIFICANT_RECENTLY = "com.example.earthquaketrackerclone.pojo.SignificantRecently";
     public static final String USGS_URL = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson" ;
+
+    //api query keys
+    public static final String START_TIME ="start time" ;
+    public static final String END_TIME = "end time";
+    public static final String MIN_LATITUDE = "min lat";
+    public static final String MIN_LONGITUDE = "min long";
+    public static final String MAX_LONGITUDE = "max lat";
+    public static final String MAX_LATITUDE = "max long";
+    public static final String LIMIT = "limit";
+    public static final String MIN_MAGNITUDE = "min mag" ;
+    public static final String ORDER_BY = "order by" ;
+    public static final String GEO_JSON = "geojson";
+
+    public static String KEY_Context= "context";
 }

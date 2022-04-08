@@ -1,14 +1,19 @@
-package com.example.earthquaketrackerclone.ui;
+package com.example.earthquaketrackerclone.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.earthquaketrackerclone.R;
 import com.example.earthquaketrackerclone.data.Assistant;
 import com.example.earthquaketrackerclone.pojo.EarthquakeModel;
+import com.example.earthquaketrackerclone.ui.FeaturedFragment;
+import com.example.earthquaketrackerclone.ui.LatestTabFragment;
+import com.example.earthquaketrackerclone.ui.MapTabFragment;
+import com.example.earthquaketrackerclone.ui.SearchFragment;
 
 import java.util.ArrayList;
 
@@ -34,7 +39,7 @@ public class MainPagerAdapter extends FragmentStatePagerAdapter {
             case 2:
                 return FeaturedFragment.newInstance(earthquakes);
             case 3:
-                return SearchFragment.newInstance(earthquakes);
+                return SearchFragment.newInstance();
             default:
                 return null;
         }

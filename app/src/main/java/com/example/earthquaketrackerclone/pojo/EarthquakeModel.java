@@ -62,6 +62,17 @@ public class EarthquakeModel {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    @Override
+    public String toString() {
+        return "EarthquakeModel{" +
+                "mag=" + mag +
+                ", time=" + time +
+                ", place='" + place + '\'' +
+                ", url='" + url + '\'' +
+                ", flagModel=" + flagModel +
+                '}';
+    }
 }
 
 

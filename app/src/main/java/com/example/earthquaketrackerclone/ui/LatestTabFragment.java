@@ -15,8 +15,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.earthquaketrackerclone.R;
+import com.example.earthquaketrackerclone.adapters.EarthquakeHorAdapter;
 import com.example.earthquaketrackerclone.data.Assistant;
 import com.example.earthquaketrackerclone.data.ImageDownloader;
+import com.example.earthquaketrackerclone.listeners.OnImageDownloadListener;
 import com.example.earthquaketrackerclone.pojo.EarthquakeModel;
 
 import java.text.SimpleDateFormat;

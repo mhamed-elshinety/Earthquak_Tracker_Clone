@@ -1,5 +1,6 @@
 package com.example.earthquaketrackerclone.ui;
 
+import com.example.earthquaketrackerclone.listeners.OnGetEarthquakesListener;
 import com.example.earthquaketrackerclone.pojo.EarthquakeModel;
 import com.example.earthquaketrackerclone.pojo.USGSModel;
 
@@ -36,5 +37,15 @@ public class LatestTabFragmentPresenter implements OnGetEarthquakesListener {
     @Override
     public void onGetSignificantRecentlyEarthquake(EarthquakeModel earthquakeModel) {
         view.getSignificantRecentlyEarthquake(earthquakeModel);
+    }
+
+    @Override
+    public void onGetMapTabEarthquakes(USGSModel usgsModel) {
+
+    }
+
+    @Override
+    public void onGetSearchTabEarthquakes(USGSModel usgsModel) {
+
     }
 }

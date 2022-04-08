@@ -5,7 +5,7 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.earthquaketrackerclone.ui.OnImageDownloadListener;
+import com.example.earthquaketrackerclone.listeners.OnImageDownloadListener;
 
 import java.io.IOException;
 import java.io.InputStream;

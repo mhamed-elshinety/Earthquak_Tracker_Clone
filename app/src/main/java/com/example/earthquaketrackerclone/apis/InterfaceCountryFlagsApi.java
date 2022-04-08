@@ -1,4 +1,4 @@
-package com.example.earthquaketrackerclone.ui;
+package com.example.earthquaketrackerclone.apis;
 
 import io.reactivex.rxjava3.core.Observable;
 import okhttp3.ResponseBody;

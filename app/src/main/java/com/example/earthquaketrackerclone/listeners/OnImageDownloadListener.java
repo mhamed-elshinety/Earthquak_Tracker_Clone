@@ -1,4 +1,4 @@
-package com.example.earthquaketrackerclone.ui;
+package com.example.earthquaketrackerclone.listeners;
 
 import android.graphics.Bitmap;
 

@@ -1,4 +1,4 @@
-package com.example.earthquaketrackerclone.ui;
+package com.example.earthquaketrackerclone.apis;
 
 import com.example.earthquaketrackerclone.pojo.USGSModel;
 
@@ -23,8 +23,7 @@ public interface InterfaceUsgsApi {
                                                    @Query("starttime") String startTime,
                                                    @Query("endtime") String endTime,
                                                    @Query("limit") int limit,
-                                                   @Query("minmagnitude") float minMagnitude,
-                                                   @Query("orderby") String orderBy);
+                                                   @Query("minmagnitude") float minMagnitude);
 
 
     @GET("fdsnws/event/1/query")
@@ -33,4 +32,22 @@ public interface InterfaceUsgsApi {
                                                            @Query("endtime") String endTime,
                                                            @Query("limit") int limit,
                                                            @Query("orderby") String orderBy);
+    @GET("fdsnws/event/1/query")
+    Observable<USGSModel> getMapEarthquakes(@Query("format") String format,
+                                            @Query("starttime") String startTime,
+                                            @Query("endtime") String endTime,
+                                            @Query("limit") int limit,
+                                            @Query("minmagnitude") float minMagnitude);
+
+    @GET("fdsnws/event/1/query")
+    Observable<USGSModel> getEarthquakes(@Query("format") String format,
+                                         @Query("starttime") String startTime,
+                                         @Query("endtime") String endTime,
+                                         @Query("minlatitude") float minLatitude,
+                                         @Query("minlongitude") float minLongitude,
+                                         @Query("maxlatitude") float maxLatitude,
+                                         @Query("maxlongitude") float maxLongitude,
+                                         @Query("limit") int limit,
+                                         @Query("minmagnitude") float minMagnitude,
+                                         @Query("orderby") String orderBy);
 }
