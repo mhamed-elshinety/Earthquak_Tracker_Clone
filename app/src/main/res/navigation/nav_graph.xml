@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/latestTabFragment">
+
+    <fragment
+        android:id="@+id/latestTabFragment"
+        android:name="com.example.earthquaketrackerclone.ui.LatestTabFragment"
+        android:label="LatestTabFragment" />
+    <fragment
+        android:id="@+id/mapTabFragment"
+        android:name="com.example.earthquaketrackerclone.ui.MapTabFragment"
+        android:label="MapTabFragment" />
+    <fragment
+        android:id="@+id/featuredFragment"
+        android:name="com.example.earthquaketrackerclone.ui.FeaturedFragment"
+        android:label="FeaturedFragment" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.earthquaketrackerclone.ui.SearchFragment"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_searchResultFragment2"
+            app:destination="@id/searchResultFragment"
+            app:popEnterAnim="@anim/anim_fade_in"
+            app:popExitAnim="@anim/anim_fade_out"
+            app:enterAnim="@anim/anim_fade_in"
+            app:exitAnim="@anim/anim_fade_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="com.example.earthquaketrackerclone.ui.SearchResultFragment"
+        android:label="SearchResultFragment" />
+</navigation>

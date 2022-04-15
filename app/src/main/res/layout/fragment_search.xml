@@ -2,30 +2,152 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="LabelFor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_primary">
+    android:background="@color/color_primary"
+    tools:ignore="LabelFor">
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="0dp"
+    <FrameLayout
+        android:id="@+id/frame_min_magnitude"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Select Your Country"
         android:layout_margin="24dp"
+        android:padding="@dimen/_2sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        >
+        android:background="@drawable/drawable_auto_complete_text_view_background">
 
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTv"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_input_layout_style"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="none"
+            android:hint="Minimum Magnitude"
+            >
+            <AutoCompleteTextView
+                android:id="@+id/minimum_magnitude_auto_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"
+                android:textColor="@android:color/white" />
 
-            />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    </com.google.android.material.textfield.TextInputLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_regions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:padding="@dimen/_2sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frame_min_magnitude"
+        android:background="@drawable/drawable_auto_complete_text_view_background">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_input_layout_style"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Default_distance_filter"
+            >
+            <AutoCompleteTextView
+                android:id="@+id/default_distance_auto_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"
+                android:textColor="@android:color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/frame_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:padding="@dimen/_2sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frame_regions"
+        android:background="@drawable/drawable_auto_complete_text_view_background">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_input_layout_style"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Select Date"
+            >
+            <AutoCompleteTextView
+                android:id="@+id/date_auto_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"
+                android:textColor="@android:color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/frame_order_by"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:padding="@dimen/_2sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frame_date"
+        android:background="@drawable/drawable_auto_complete_text_view_background">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/text_input_layout_style"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Sort Earthquakes By"
+            >
+            <AutoCompleteTextView
+                android:id="@+id/order_by_auto_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"
+                android:textColor="@android:color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_indicator"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        app:layout_constraintBottom_toTopOf="@+id/search_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame_order_by"
+        app:trackColor="@android:color/holo_red_dark"
+        android:visibility="gone"
+        />
+
+
+
+    <TextView
+        android:id="@+id/search_tv"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:background="@drawable/sign_recent_cv_bg"
+        android:gravity="center"
+        android:text="@string/search"
+        android:clickable="true"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/frame_order_by"
+        app:layout_constraintStart_toStartOf="@+id/frame_order_by" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -48,7 +48,7 @@ public class FeaturedFragment extends Fragment {
 
     //define fragment fields override from PagerFragmentParent
     public void defineFields() {
-        this.earthquakes = (ArrayList<EarthquakeModel>) getArguments().getSerializable(Constants.KEY_EARTHQUAKES);
+     //   this.earthquakes = (ArrayList<EarthquakeModel>) getArguments().getSerializable(Constants.KEY_EARTHQUAKES);
     }
 
     public void defineViews() {

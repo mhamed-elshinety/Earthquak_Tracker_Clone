@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -76,13 +77,13 @@ public class LatestTabFragment extends Fragment implements LatestTabFragmentView
 
     @Override
     public void getNearYouEarthquakes(ArrayList<EarthquakeModel> earthquakes) {
-        nearYouRecV.setAdapter(new EarthquakeHorAdapter(getContext(), earthquakes));
+        nearYouRecV.setAdapter(new EarthquakeHorAdapter(getContext(), earthquakes, LinearLayout.HORIZONTAL));
         nearYouRecV.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
     }
 
     @Override
     public void getMostRecentEarthquakes(ArrayList<EarthquakeModel> earthquakes) {
-        mostRecentRecV.setAdapter(new EarthquakeHorAdapter(getContext(), earthquakes));
+        mostRecentRecV.setAdapter(new EarthquakeHorAdapter(getContext(), earthquakes,LinearLayout.HORIZONTAL));
         mostRecentRecV.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));    }
 
     @Override

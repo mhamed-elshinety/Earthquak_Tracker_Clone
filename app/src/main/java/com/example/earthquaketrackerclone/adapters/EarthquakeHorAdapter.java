@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,15 +24,15 @@ public class EarthquakeHorAdapter extends RecyclerView.Adapter<EarthquakeHorAdap
 
     private Context context;
     private ArrayList<EarthquakeModel> earthquakes;
+    private int orientation;
 
-    public EarthquakeHorAdapter (Context context){
-        this(context,null);
-    }
-
-    public EarthquakeHorAdapter(Context context, ArrayList<EarthquakeModel> earthquakes) {
+    public EarthquakeHorAdapter(Context context, ArrayList<EarthquakeModel> earthquakes, int orientation) {
         setEarthquakes(earthquakes);
         setContext(context);
+        setOrientation(orientation);
     }
+
+    private void setOrientation(int orientation) {this.orientation = orientation; }
 
     private void setContext(Context context) {
         this.context = context;
@@ -44,7 +45,14 @@ public class EarthquakeHorAdapter extends RecyclerView.Adapter<EarthquakeHorAdap
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_earthquake_hor_rec,parent,false));
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(getLayoutRef(),parent,false));
+    }
+
+    private int getLayoutRef() {
+        if(orientation == LinearLayout.VERTICAL)
+            return R.layout.item_earthquake_vertical_rec;
+        else
+            return R.layout.item_earthquake_hor_rec;
     }
 
     @Override

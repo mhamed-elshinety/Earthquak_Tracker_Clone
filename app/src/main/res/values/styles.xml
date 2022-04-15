@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <style name="TextAppearanceTitle">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:fontFamily">@font/roboto_bold</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
     <style name="TextCard_Dis_Town">
@@ -12,6 +13,21 @@
         <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+
+    <style name="text_input_layout_style" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+        <item name="boxBackgroundColor">@color/light_black</item>
+        <item name="boxBackgroundMode">filled</item>
+        <item name="boxStrokeColor">@null</item>
+        <item name="android:textColorHint">@android:color/white</item>
+        <item name="hintTextColor">@android:color/white</item>
+        <item name="textFillColor">@android:color/white</item>
+        <item name="textOutlineColor">@color/light_black</item>
+        <item name="strokeColor">@null</item>
+        <item name="colorOutline">@android:color/white</item>
+        <item name="endIconTint">@android:color/white</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
 </resources>

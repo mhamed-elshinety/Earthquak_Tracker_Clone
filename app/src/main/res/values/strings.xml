@@ -13,5 +13,32 @@
     <string name="near_to">Near to</string>
     <string name="today">Today</string>
     <string name="days_ago">Days ago</string>
+    <string name="complete_date">Please Complete Searching data</string>
+
+    <string-array name="magnitudes_list">
+        <item >1</item>
+        <item >2</item>
+        <item >3</item>
+        <item >4</item>
+        <item >5</item>
+        <item >6</item>
+        <item >7</item>
+    </string-array>
+
+    <string-array name="default_distance_list">
+        <item>All Regions</item>
+        <item>Near Me</item>
+        <item>Africa</item>
+        <item>Asia</item>
+        <item>Australia and Oceania</item>
+        <item>Europe</item>
+        <item>North America</item>
+        <item>South America</item>
+    </string-array>
+
+    <string-array name="sort_by_list">
+        <item>Time</item>
+        <item>Magnitude</item>
+    </string-array>
 
 </resources>
