@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.earthquaketrackerclone.R;
-import com.example.earthquaketrackerclone.adapters.EarthquakeHorAdapter;
+import com.example.earthquaketrackerclone.adapters.EarthquakeRecAdapter;
 import com.example.earthquaketrackerclone.data.Constants;
 import com.example.earthquaketrackerclone.pojo.EarthquakeModel;
 
@@ -48,7 +48,7 @@ public class SearchResultFragment extends Fragment {
     }
 
     private void addEarthquakesToRecView() {
-        recyclerView.setAdapter(new EarthquakeHorAdapter(getActivity(),earthquakes,LinearLayoutManager.VERTICAL));
+        recyclerView.setAdapter(new EarthquakeRecAdapter(getActivity(),earthquakes,LinearLayoutManager.VERTICAL));
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
     }
 

@@ -1,5 +1,6 @@
 package com.example.earthquaketrackerclone.ui;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,7 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.earthquaketrackerclone.R;
-import com.example.earthquaketrackerclone.adapters.EarthquakeHorAdapter;
+import com.example.earthquaketrackerclone.adapters.EarthquakeRecAdapter;
 import com.example.earthquaketrackerclone.data.Assistant;
 import com.example.earthquaketrackerclone.data.ImageDownloader;
 import com.example.earthquaketrackerclone.listeners.OnImageDownloadListener;
@@ -25,6 +26,7 @@ import com.example.earthquaketrackerclone.pojo.EarthquakeModel;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
 public class LatestTabFragment extends Fragment implements LatestTabFragmentView, OnImageDownloadListener {
 
@@ -38,17 +40,7 @@ public class LatestTabFragment extends Fragment implements LatestTabFragmentView
     private TextView durDaysTxv;
     private ImageView flagImv;
 
-    private ArrayList<EarthquakeModel> nearByEarthquakes;
     private LatestTabFragmentPresenter presenter;
-
-    //New Instance method "This function is very important to get any data from activity"
-    public static LatestTabFragment newInstance() {
-        LatestTabFragment fragment = new LatestTabFragment();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
-        return fragment;
-    }
-
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -77,13 +69,13 @@ public class LatestTabFragment extends Fragment implements LatestTabFragmentView
 
     @Override
     public void getNearYouEarthquakes(ArrayList<EarthquakeModel> earthquakes) {
-        nearYouRecV.setAdapter(new EarthquakeHorAdapter(getContext(), earthquakes, LinearLayout.HORIZONTAL));
+        nearYouRecV.setAdapter(new EarthquakeRecAdapter(getContext(), earthquakes, LinearLayout.HORIZONTAL));
         nearYouRecV.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
     }
 
     @Override
     public void getMostRecentEarthquakes(ArrayList<EarthquakeModel> earthquakes) {
-        mostRecentRecV.setAdapter(new EarthquakeHorAdapter(getContext(), earthquakes,LinearLayout.HORIZONTAL));
+        mostRecentRecV.setAdapter(new EarthquakeRecAdapter(getContext(), earthquakes,LinearLayout.HORIZONTAL));
         mostRecentRecV.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));    }
 
     @Override
@@ -105,19 +97,19 @@ public class LatestTabFragment extends Fragment implements LatestTabFragmentView
 
     //define fragment views fields "override from PagerFragmentParent"
     public void defineViews() {
-        nearYouRecV = getActivity().findViewById(R.id.new_you_recv);
-        mostRecentRecV = getActivity().findViewById(R.id.most_recent_recv);
-        magTxv = getActivity().findViewById(R.id.mag_txv);
-        disTxv = getActivity().findViewById(R.id.dis_txv);
-        townTxv = getActivity().findViewById(R.id.town_txv);
-        dateTimeTxv = getActivity().findViewById(R.id.date_time_txv);
-        durDaysTxv = getActivity().findViewById(R.id.dur_days_txv);
-        flagImv = getActivity().findViewById(R.id.flag_iv);
+        nearYouRecV = requireActivity().findViewById(R.id.new_you_recv);
+        mostRecentRecV = requireActivity().findViewById(R.id.most_recent_recv);
+        magTxv = requireActivity().findViewById(R.id.mag_txv);
+        disTxv = requireActivity().findViewById(R.id.dis_txv);
+        townTxv = requireActivity().findViewById(R.id.town_txv);
+        dateTimeTxv = requireActivity().findViewById(R.id.date_time_txv);
+        durDaysTxv = requireActivity().findViewById(R.id.dur_days_txv);
+        flagImv = requireActivity().findViewById(R.id.flag_iv);
     }
 
     //setting time
     private void setTime(long time) {
-        dateTimeTxv.setText(new SimpleDateFormat("MMM dd, yyyy hh:mm:ss").format(new Date(time)));
+        dateTimeTxv.setText(new SimpleDateFormat("MMM dd, yyyy hh:mm:ss", Locale.US).format(new Date(time)));
     }
 
     //splitting place into 2 splits to set them in dis and town TVs
@@ -127,16 +119,18 @@ public class LatestTabFragment extends Fragment implements LatestTabFragmentView
             disTxv.setText(placeSplits[0]);
             townTxv.setText(placeSplits[1]);
         } else {
-            disTxv.setText(getContext().getResources().getString(R.string.near_to));
+            disTxv.setText(requireContext().getResources().getString(R.string.near_to));
             townTxv.setText(place);
         }
     }
 
     //setting magnitude TV
+    @SuppressLint("SetTextI18n")
     private void setMag(double magnitude) {
         magTxv.setText(magnitude + "");
     }
 
+    @SuppressLint("SetTextI18n")
     private void setDurDays(long time){
         long days = Assistant.subtractDays(new Date(time));
         if(days==0)

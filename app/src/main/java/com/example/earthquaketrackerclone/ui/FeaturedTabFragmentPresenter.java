@@ -9,42 +9,41 @@ import com.example.earthquaketrackerclone.pojo.USGSModel;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class SearchFragmentPresenter implements OnGetEarthquakesListener {
+public class FeaturedTabFragmentPresenter implements OnGetEarthquakesListener {
 
-    private SearchFragmentView searchFragmentView;
-    private USGSModel usgsModel;
+    private FeaturedFragmentView view;
+    private USGSModel model;
 
-    public SearchFragmentPresenter(SearchFragmentView searchFragmentView){
-        setSearchFragmentView(searchFragmentView);
-        usgsModel = new USGSModel(this);
+    public FeaturedTabFragmentPresenter (FeaturedFragmentView view){
+        this.view = view;
+        model = new USGSModel(this);
     }
 
-    public void setSearchFragmentView(SearchFragmentView searchFragmentView) {
-        this.searchFragmentView = searchFragmentView;
+    public void getEarthquakesCounters(){
+        model.getEarthquakesCounters();
     }
 
-    public void getEarthquakes(Bundle queryBundle){
-        usgsModel.getSearchMapEarthquakes(queryBundle);
+    public void getBiggestEarthquakes(){
+        model.getBiggestEarthquakes();
+    }
+
+    public void getNearestEarthquakes(){
+        model.getNearestEarthquakes();
     }
 
     @Override
-    public void onGetSearchTabEarthquakes(USGSModel usgsModel) {
-        searchFragmentView.onGetEarthquakes(usgsModel);
-    }
-
-    @Override
-    public void onGetEarthquakesCounters(ArrayList<Integer> integers) {
-
+    public void onGetEarthquakesCounters(ArrayList<Integer> counters) {
+        view.onGetEarthquakesCounters(counters);
     }
 
     @Override
     public void onGetBiggestEarthquakes(ArrayList<USGSModel> usgsModels) {
-
+            view.onGetBiggestEarthquakes(usgsModels);
     }
 
     @Override
     public void onGetNearestEarthquakes(ArrayList<USGSModel> usgsModels) {
-
+        view.onGetNearestEarthquakes(usgsModels);
     }
 
     @Override
@@ -66,5 +65,11 @@ public class SearchFragmentPresenter implements OnGetEarthquakesListener {
     public void onGetMapTabEarthquakes(USGSModel usgsModel) {
 
     }
+
+    @Override
+    public void onGetSearchTabEarthquakes(USGSModel usgsModel) {
+
+    }
+
 
 }

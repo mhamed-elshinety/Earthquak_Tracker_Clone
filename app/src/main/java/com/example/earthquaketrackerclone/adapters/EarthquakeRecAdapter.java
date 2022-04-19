@@ -20,13 +20,13 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class EarthquakeHorAdapter extends RecyclerView.Adapter<EarthquakeHorAdapter.ViewHolder> {
+public class EarthquakeRecAdapter extends RecyclerView.Adapter<EarthquakeRecAdapter.ViewHolder> {
 
     private Context context;
     private ArrayList<EarthquakeModel> earthquakes;
     private int orientation;
 
-    public EarthquakeHorAdapter(Context context, ArrayList<EarthquakeModel> earthquakes, int orientation) {
+    public EarthquakeRecAdapter(Context context, ArrayList<EarthquakeModel> earthquakes, int orientation) {
         setEarthquakes(earthquakes);
         setContext(context);
         setOrientation(orientation);

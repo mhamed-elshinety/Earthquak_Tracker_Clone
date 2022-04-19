@@ -5,6 +5,7 @@ import com.example.earthquaketrackerclone.pojo.EarthquakeModel;
 import com.example.earthquaketrackerclone.pojo.USGSModel;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class MapTabFragmentPresenter implements OnGetEarthquakesListener {
 
@@ -27,6 +28,21 @@ public class MapTabFragmentPresenter implements OnGetEarthquakesListener {
 
     @Override
     public void onGetSearchTabEarthquakes(USGSModel usgsModel) {
+
+    }
+
+    @Override
+    public void onGetEarthquakesCounters(ArrayList<Integer> integers) {
+
+    }
+
+    @Override
+    public void onGetBiggestEarthquakes(ArrayList<USGSModel> usgsModels) {
+
+    }
+
+    @Override
+    public void onGetNearestEarthquakes(ArrayList<USGSModel> usgsModels) {
 
     }
 

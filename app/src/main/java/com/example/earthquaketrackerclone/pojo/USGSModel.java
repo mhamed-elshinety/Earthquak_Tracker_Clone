@@ -12,10 +12,14 @@ import com.example.earthquaketrackerclone.apis.InterfaceUsgsApi;
 import com.example.earthquaketrackerclone.listeners.OnGetEarthquakesListener;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 import retrofit2.Retrofit;
@@ -114,6 +118,124 @@ public class USGSModel {
                 .observeOn(AndroidSchedulers.mainThread());
 
         observable.subscribe(o-> listener.onGetSearchTabEarthquakes(o));
+    }
+
+    public void getEarthquakesCounters(){
+        InterfaceUsgsApi api = getUSGSRetrofitInstance().create(InterfaceUsgsApi.class);
+
+        Observable<Integer> observable = Observable.merge(
+                api.count(Assistant.getFormatDateAfterDays(-1,"yyyy-MM-dd"),Assistant.getFormatDateAfterDays(0,"yyyy-MM-dd"))
+                ,api.count(Assistant.getFormatDateAfterDays(-7,"yyyy-MM-dd"),Assistant.getFormatDateAfterDays(0,"yyyy-MM-dd"))
+                ,api.count(Assistant.getFormatDateAfterDays(-30,"yyyy-MM-dd"),Assistant.getFormatDateAfterDays(0,"yyyy-MM-dd")))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+
+        observable.subscribe(new Observer<Integer>() {
+            ArrayList<Integer> integers = new ArrayList<>();
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+            }
+
+            @Override
+            public void onNext(@NonNull Integer integer) { integers.add(integer);}
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+            }
+
+            @Override
+            public void onComplete() {
+                listener.onGetEarthquakesCounters(integers);
+            }
+        });
+    }
+
+    public void getBiggestEarthquakes(){
+        InterfaceUsgsApi api = getUSGSRetrofitInstance().create(InterfaceUsgsApi.class);
+        Observable observable1 =  api.getEarthquakes(Constants.GEO_JSON,
+                Assistant.getFormatDateAfterDays(-1,"yyyy-MM-dd"),
+                Assistant.getFormatDateAfterDays(0,"yyyy-MM-dd"),
+                -90,-180,90,180,5,1,Constants.MAGNITUDE);
+
+        Observable observable2 =  api.getEarthquakes(Constants.GEO_JSON,
+                Assistant.getFormatDateAfterDays(-7,"yyyy-MM-dd"),
+                Assistant.getFormatDateAfterDays(0,"yyyy-MM-dd"),
+                -90,-180,90,180,5,1,Constants.MAGNITUDE);
+
+
+        Observable<USGSModel> observable = Observable.merge(observable1,observable2)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+
+        observable.subscribe(new Observer<USGSModel>() {
+            ArrayList<USGSModel> models =  new ArrayList<>();
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(@NonNull USGSModel usgsModel) {
+                models.add(usgsModel);
+                Log.d(Constants.LOG_KEY_MY_APP, "onNext: " + usgsModel.features.get(0).properties.getPlace());
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+                Log.d(Constants.LOG_KEY_MY_APP, "onError: " + e.getMessage());
+
+            }
+
+            @Override
+            public void onComplete() {
+                listener.onGetBiggestEarthquakes(models);
+                Log.d(Constants.LOG_KEY_MY_APP, "onComplete: " + models.toString());
+            }
+        });
+
+    }
+
+    public void getNearestEarthquakes(){
+        InterfaceUsgsApi api = getUSGSRetrofitInstance().create(InterfaceUsgsApi.class);
+        Observable<USGSModel> observable1 = api.getEarthquakes(Constants.GEO_JSON,
+                Assistant.getFormatDateAfterDays(-1,"yyyy-MM-dd"),
+                Assistant.getFormatDateAfterDays(0,"yyyy-MM-dd"),0,0,
+                50,60,1,1,Constants.MAGNITUDE);
+
+        Observable<USGSModel> observable2 = api.getEarthquakes(Constants.GEO_JSON,
+                Assistant.getFormatDateAfterDays(-1,"yyyy-MM-dd"),
+                Assistant.getFormatDateAfterDays(0,"yyyy-MM-dd"),0,0,
+                50,60,1,1,Constants.TIME);
+
+        Observable<USGSModel> observable = Observable.merge(observable1,observable2)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+
+        observable.subscribe(new Observer<USGSModel>() {
+            ArrayList<USGSModel> usgsModels = new ArrayList<>();
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(@NonNull USGSModel usgsModel) {
+                usgsModels.add(usgsModel);
+                Log.d(Constants.LOG_KEY_MY_APP, "onNext: " + usgsModel.getFeatures().get(0).getProperties().getPlace());
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+                Log.d(Constants.LOG_KEY_MY_APP, "onError: " + e.getMessage());
+            }
+
+            @Override
+            public void onComplete() {
+                listener.onGetNearestEarthquakes(usgsModels);
+                Log.d(Constants.LOG_KEY_MY_APP, "onComplete: ");
+            }
+        });
+
     }
 
 

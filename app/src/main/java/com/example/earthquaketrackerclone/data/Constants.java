@@ -40,5 +40,12 @@ public abstract class Constants {
     public static final String ORDER_BY = "order by" ;
     public static final String GEO_JSON = "geojson";
 
+    public static final String MAGNITUDE = "magnitude";
+    public static final String TIME = "time";
+
     public static String KEY_Context= "context";
+
+    //Featured recycler adapter
+    public static final String COUNTERS = "counters";
+    public static final String BIGGEST = "biggest";
 }

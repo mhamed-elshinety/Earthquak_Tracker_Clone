@@ -15,6 +15,13 @@
     <!-- these colors are for card view backgrounds -->
     <color name="start_orange_burnt">#CC5610</color>
     <color name="end_orange_vermilion">#DA462A</color>
+    <color name="start_dark_turquoise">#196D7C</color>
+    <color name="end_blue_zaffre">#3F42CB</color>
+    <color name="start_dark_pink">#CA3568</color>
+    <color name="end_pale_carmine">#BD3E34</color>
+    <color name="start_dark_pink2">#BD3B5D</color>
+    <color name="end_indigo">#48269B</color>
+
 
     <color name="battleship_gray">#989A9F</color>
 

@@ -50,4 +50,12 @@ public interface InterfaceUsgsApi {
                                          @Query("limit") int limit,
                                          @Query("minmagnitude") float minMagnitude,
                                          @Query("orderby") String orderBy);
+
+    @GET("fdsnws/event/1/count")
+    Observable<Integer> count(@Query("starttime") String startTime,
+                              @Query("endtime") String endTime);
+
+
+
+
 }

@@ -29,6 +29,10 @@ public abstract class Assistant {
         return new SimpleDateFormat(dateFormat, Locale.US).format(Assistant.getDateAfterDays(new Date(), noDaysFromToday));
     }
 
+    public static String getFormattedDate(Date date, String dateFormat) {
+        return new SimpleDateFormat(dateFormat, Locale.US).format(date);
+    }
+
 
     public static long subtractDays(Date date){
         return Math.round((new Date().getTime()-date.getTime())/1000/60/60/24);

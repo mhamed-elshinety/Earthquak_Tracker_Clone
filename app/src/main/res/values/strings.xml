@@ -14,6 +14,13 @@
     <string name="today">Today</string>
     <string name="days_ago">Days ago</string>
     <string name="complete_date">Please Complete Searching data</string>
+    <string name="earthquakes_in_past_7_days">earthquakes\n in past \n 7 days</string>
+    <string name="earthquakes_in_past_30_days">earthquakes \n in past \n 30 days</string>
+    <string name="earthquakes_in_past_24_hours">earthquakes \n in past \n 24 hours</string>
+    <string name="the_biggest_earthquakes">The biggest earthquakes</string>
+    <string name="this_week">This week</string>
+    <string name="most_significant_earthquake_near_you">Most significant earthquake near you</string>
+    <string name="closest_to_you_today">Closest to you today</string>
 
     <string-array name="magnitudes_list">
         <item >1</item>

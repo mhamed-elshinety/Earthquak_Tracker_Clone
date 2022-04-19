@@ -47,7 +47,7 @@ dependencies {
 
     //RXJava
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
-    implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.1'
     implementation "com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0"
 
     //Google maps
@@ -66,6 +66,11 @@ dependencies {
     androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
     // Jetpack Compose Integration
     implementation "androidx.navigation:navigation-compose:$nav_version"
+
+    implementation 'com.github.blongho:worldCountryData:1.5.3'
+
+
+
 
 
 
