@@ -21,6 +21,7 @@
     <string name="this_week">This week</string>
     <string name="most_significant_earthquake_near_you">Most significant earthquake near you</string>
     <string name="closest_to_you_today">Closest to you today</string>
+    <string name="todo">TODO</string>
 
     <string-array name="magnitudes_list">
         <item >1</item>

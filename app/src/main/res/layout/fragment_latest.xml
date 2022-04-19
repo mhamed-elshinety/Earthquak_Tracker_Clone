@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_primary"
@@ -21,6 +22,34 @@
             android:layout_marginTop="@dimen/_16sdp"
             android:layout_marginStart="@dimen/_16sdp" />
 
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/near_you_earthquakes_shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/near_you_tv"
+            app:shimmer_repeat_mode="restart"
+            app:shimmer_shape="radial">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <include layout="@layout/shimmer_item_earthquake_hor_rec" />
+
+                <include layout="@layout/shimmer_item_earthquake_hor_rec" />
+
+                <include layout="@layout/shimmer_item_earthquake_hor_rec" />
+
+                <include layout="@layout/shimmer_item_earthquake_hor_rec" />
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/new_you_recv"
             android:layout_width="match_parent"
@@ -35,14 +64,14 @@
 
         <TextView
             android:id="@+id/significant_recently_tv"
-            android:text="@string/significant_recently"
+            style="@style/TextAppearanceTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/TextAppearanceTitle"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:text="@string/significant_recently"
+            app:layout_constraintTop_toBottomOf="@id/guideline1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/new_you_recv"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginStart="@dimen/_16sdp" />
+            tools:layout_editor_absoluteY="262dp" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/significant_cv"
@@ -80,7 +109,7 @@
                             android:layout_height="match_parent"
                             android:src="@mipmap/united_nations"
                             android:scaleType="centerCrop"
-                            />
+                            android:contentDescription="@string/todo" />
                     </androidx.cardview.widget.CardView>
 
                     <TextView
@@ -91,7 +120,7 @@
                         app:layout_constraintTop_toTopOf="@id/flag_cv"
                         app:layout_constraintBottom_toBottomOf="@id/flag_cv"
                         style="@style/TextAppearanceTitle"
-                        android:text="5.0"
+                        tools:text="5.0"
                         android:layout_marginStart="@dimen/_4sdp"
                         />
 
@@ -103,7 +132,7 @@
                         app:layout_constraintStart_toEndOf="@id/mag_txv"
                         android:layout_marginStart="@dimen/_8sdp"
                         style="@style/TextCard_Dis_Town"
-                        android:text="62 KM S OF"
+                        tools:text="62 KM S OF"
                         />
 
                     <TextView
@@ -114,7 +143,7 @@
                         app:layout_constraintStart_toEndOf="@id/mag_txv"
                         android:layout_marginStart="@dimen/_8sdp"
                         style="@style/TextCard_Dis_Town"
-                        android:text="Hualien City, Taiwan"
+                        tools:text="Hualien City, Taiwan"
                         android:textSize="@dimen/_10sdp"
                         />
 
@@ -126,7 +155,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         android:layout_marginStart="@dimen/_8sdp"
                         style="@style/TextCard_Dis_Town"
-                        android:text="Mar 22, 2022 19:41"
+                        tools:text="Mar 22, 2022 19:41"
                         android:textSize="@dimen/_10sdp"
                         android:fontFamily="@font/roboto_regular"
                         />
@@ -139,7 +168,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         android:layout_marginEnd="@dimen/_8sdp"
                         style="@style/TextCard_Dis_Town"
-                        android:text="2 Days Ago"
+                        tools:text="2 Days Ago"
                         android:textSize="@dimen/_10sdp"
                         android:fontFamily="@font/roboto_bold"
                         />
@@ -150,25 +179,53 @@
 
         <TextView
             android:id="@+id/most_recent_tv"
-            android:text="@string/most_recent"
+            style="@style/TextAppearanceTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/TextAppearanceTitle"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="@string/most_recent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/significant_cv"
-            android:layout_marginTop="@dimen/_16sdp"
-            android:layout_marginStart="@dimen/_16sdp" />
+            app:layout_constraintTop_toBottomOf="@+id/significant_cv" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/most_recent_earthquakes_shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/most_recent_tv"
+            app:shimmer_repeat_mode="restart"
+            app:shimmer_shape="radial">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <include layout="@layout/shimmer_item_earthquake_hor_rec" />
+
+                <include layout="@layout/shimmer_item_earthquake_hor_rec" />
+
+                <include layout="@layout/shimmer_item_earthquake_hor_rec" />
+
+                <include layout="@layout/shimmer_item_earthquake_hor_rec" />
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
 
         <TextView
-            android:text="@string/see_all"
+            style="@style/TextAppearanceTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/TextAppearanceTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/significant_cv"
-            android:layout_marginTop="@dimen/_16sdp"
             android:layout_marginEnd="@dimen/_16sdp"
-            android:fontFamily="@font/roboto_regular"/>
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/see_all"
+            app:layout_constraintBottom_toBottomOf="@+id/most_recent_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/most_recent_tv" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/most_recent_recv"
@@ -180,6 +237,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="@dimen/_8sdp"
             android:layout_marginBottom="@dimen/_16sdp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.39" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

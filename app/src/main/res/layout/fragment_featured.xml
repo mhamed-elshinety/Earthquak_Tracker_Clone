@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_primary">
@@ -10,62 +9,151 @@
         android:layout_width="match_parent"
         android:layout_height="0dp">
 
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/earthquakes_counter_shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            app:shimmer_repeat_mode="restart"
+            app:shimmer_shape="radial">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <include layout="@layout/shimmer_item_featured_earthquakes_counter" />
+
+                <include layout="@layout/shimmer_item_featured_earthquakes_counter" />
+
+                <include layout="@layout/shimmer_item_featured_earthquakes_counter" />
+
+                <include layout="@layout/shimmer_item_featured_earthquakes_counter" />
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/earthquakes_counter_rec_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/biggest___tv"
-            android:text="@string/the_biggest_earthquakes"
+            style="@style/TextAppearanceTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/TextAppearanceTitle"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="@string/the_biggest_earthquakes"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/earthquakes_counter_rec_view"
+            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/biggest_earthquakes_shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginBottom="@dimen/_8sdp"
-            android:layout_marginStart="@dimen/_16sdp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/biggest___tv"
+            app:shimmer_repeat_mode="restart"
+            app:shimmer_shape="radial">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <include layout="@layout/shimmer_item_featured_biggest_earthquake" />
+
+                <include layout="@layout/shimmer_item_featured_biggest_earthquake" />
+
+                <include layout="@layout/shimmer_item_featured_biggest_earthquake" />
+
+                <include layout="@layout/shimmer_item_featured_biggest_earthquake" />
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/biggest_earthquakes_rec_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/biggest___tv"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="@dimen/_8sdp"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/biggest___tv" />
 
 
         <TextView
             android:id="@+id/near_you___tv"
-            android:text="@string/near_you"
+            style="@style/TextAppearanceTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/TextAppearanceTitle"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="@string/near_you"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/biggest_earthquakes_rec_view"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginBottom="@dimen/_8sdp"
-            android:layout_marginStart="@dimen/_16sdp" />
+            app:layout_constraintTop_toBottomOf="@+id/guideline3" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/nearest_earthquakes_rec_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/near_you___tv"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="@dimen/_8sdp"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/near_you___tv" />
 
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/nearest_earthquakes_shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/near_you___tv"
+            app:shimmer_repeat_mode="restart"
+            app:shimmer_shape="radial">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
+                <include layout="@layout/shimmer_item_featured_nearest_earthquakes" />
+
+                <include layout="@layout/shimmer_item_featured_nearest_earthquakes" />
+
+                <include layout="@layout/shimmer_item_featured_nearest_earthquakes" />
+
+                <include layout="@layout/shimmer_item_featured_nearest_earthquakes" />
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.62" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,7 @@
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/drawable-v24/drawable_card_no_month.xml" value="0.1095" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/drawable-v24/drawable_card_no_week.xml" value="0.1095" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/drawable-v24/drawable_card_no_year.xml" value="0.1095" />
+        <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/drawable-v24/drawable_card_shimmer.xml" value="0.117" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/drawable-v24/drawable_card_today.xml" value="0.1095" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/drawable-v24/drawable_card_week.xml" value="0.1095" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/drawable-v24/drawable_card_year.xml" value="0.1095" />
@@ -20,6 +21,7 @@
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/drawable/drawable_card_most_sign_near.xml" value="0.1095" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/drawable/drawable_card_no_today.xml" value="0.127" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/drawable/drawable_card_no_week.xml" value="0.1095" />
+        <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/drawable/drawable_card_shimmer.xml" value="0.117" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/drawable/drawable_card_today.xml" value="0.127" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/drawable/drawable_card_week.xml" value="0.127" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/drawable/drawable_card_year.xml" value="0.1095" />
@@ -32,7 +34,7 @@
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/activity_main.xml" value="0.1213768115942029" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/activity_splash_screen.xml" value="0.19519927536231885" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/autocomplete_text_item.xml" value="0.1526268115942029" />
-        <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/fragment_featured.xml" value="0.1911231884057971" />
+        <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/fragment_featured.xml" value="0.25" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/fragment_latest.xml" value="0.25" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/fragment_map.xml" value="0.12534059945504086" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/fragment_search.xml" value="0.1911231884057971" />
@@ -40,13 +42,18 @@
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/item_earthquake_hor_rec.xml" value="0.5" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/item_earthquake_vertical_rec.xml" value="0.2282051282051282" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/item_featured_biggest_earthquake.xml" value="0.6064139941690962" />
+        <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/item_featured_biggest_earthquake_shimmer.xml" value="0.15942028985507245" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/item_featured_earthquake.xml" value="0.14130434782608695" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/item_featured_earthquake_1.xml" value="0.33" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/item_featured_earthquake_2.xml" value="0.25" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/item_featured_earthquake_3.xml" value="0.22" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/item_featured_earthquakes_counter.xml" value="0.18614130434782608" />
+        <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/item_featured_earthquakes_counter_shimmer.xml" value="0.15942028985507245" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/item_featured_nearest_earthquake.xml" value="0.1852355072463768" />
+        <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/item_featured_nearest_earthquakes_shimmer.xml" value="0.15942028985507245" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/layout_significant_recently.xml" value="0.18659420289855072" />
+        <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/shimmer_item_earthquake_hor_rec.xml" value="0.1526268115942029" />
+        <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/layout/shimmer_item_earthquake_vertical_rec.xml" value="0.1526268115942029" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/menu/menu_bot_nav.xml" value="0.20416666666666666" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1814814814814815" />
         <entry key="..\:/MyPC/Projects2022/Practicing/EarthquakeTrackerClone/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.17777777777777778" />

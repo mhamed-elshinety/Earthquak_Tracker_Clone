@@ -15,23 +15,21 @@ import com.example.earthquaketrackerclone.R;
 import com.example.earthquaketrackerclone.adapters.BiggestEarthquakesAdapter;
 import com.example.earthquaketrackerclone.adapters.EarthquakesCountersAdapter;
 import com.example.earthquaketrackerclone.adapters.NearestEarthquakesAdapter;
-import com.example.earthquaketrackerclone.pojo.EarthquakeModel;
 import com.example.earthquaketrackerclone.pojo.USGSModel;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class FeaturedFragment extends Fragment implements FeaturedFragmentView {
 
     private RecyclerView earthquakesCountersRecView;
     private RecyclerView biggestEarthquakesRecView;
     private RecyclerView nearestEarthquakesRecView;
+    private ShimmerFrameLayout counterShimmerLayout;
+    private ShimmerFrameLayout biggestShimmerLayout;
+    private ShimmerFrameLayout nearestShimmerLayout;
 
     private FeaturedTabFragmentPresenter presenter;
-
-    public static FeaturedFragment newInstance(){
-        return new FeaturedFragment();
-    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,6 +49,17 @@ public class FeaturedFragment extends Fragment implements FeaturedFragmentView {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         defineViews(view);
+        callPresenters();
+        startShimmers();
+    }
+
+    private void startShimmers() {
+        counterShimmerLayout.startShimmer();
+        biggestShimmerLayout.startShimmer();
+        nearestShimmerLayout.startShimmer();
+    }
+
+    private void callPresenters() {
         presenter.getEarthquakesCounters();
         presenter.getBiggestEarthquakes();
         presenter.getNearestEarthquakes();
@@ -64,6 +73,9 @@ public class FeaturedFragment extends Fragment implements FeaturedFragmentView {
         earthquakesCountersRecView = view.findViewById(R.id.earthquakes_counter_rec_view);
         biggestEarthquakesRecView = view.findViewById(R.id.biggest_earthquakes_rec_view);
         nearestEarthquakesRecView = view.findViewById(R.id.nearest_earthquakes_rec_view);
+        counterShimmerLayout = view.findViewById(R.id.earthquakes_counter_shimmer);
+        biggestShimmerLayout = view.findViewById(R.id.biggest_earthquakes_shimmer);
+        nearestShimmerLayout = view.findViewById(R.id.nearest_earthquakes_shimmer);
     }
 
     @Override
@@ -72,18 +84,24 @@ public class FeaturedFragment extends Fragment implements FeaturedFragmentView {
     }
 
     private void setCountersRecyclerView(ArrayList<Integer> counters) {
+        counterShimmerLayout.stopShimmer();
+        counterShimmerLayout.setVisibility(View.GONE);
         earthquakesCountersRecView.setAdapter(new EarthquakesCountersAdapter(counters,getContext()));
         earthquakesCountersRecView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
     }
 
     @Override
     public void onGetBiggestEarthquakes(ArrayList<USGSModel> usgsModels) {
+        biggestShimmerLayout.stopShimmer();
+        biggestShimmerLayout.setVisibility(View.GONE);
         biggestEarthquakesRecView.setAdapter(new BiggestEarthquakesAdapter(usgsModels,getContext()));
         biggestEarthquakesRecView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
     }
 
     @Override
     public void onGetNearestEarthquakes(ArrayList<USGSModel> usgsModels) {
+        nearestShimmerLayout.stopShimmer();
+        nearestShimmerLayout.setVisibility(View.GONE);
         nearestEarthquakesRecView.setAdapter(new NearestEarthquakesAdapter(usgsModels, getContext()));
         nearestEarthquakesRecView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
     }

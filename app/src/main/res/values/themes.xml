@@ -5,6 +5,8 @@
     <item name="colorPrimaryDark">@color/color_primary_dark</item>
     <item name="colorSecondary">@color/color_secondary</item>
     <item name="colorAccent">@color/color_accent</item>
+    <item name="actionMenuTextColor">@android:color/white</item>
+    <item name="android:textColorPrimary">@android:color/white</item>
     <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
 </style>
 </resources>

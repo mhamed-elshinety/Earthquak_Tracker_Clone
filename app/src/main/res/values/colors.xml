@@ -22,9 +22,13 @@
     <color name="start_dark_pink2">#BD3B5D</color>
     <color name="end_indigo">#48269B</color>
 
-
     <color name="battleship_gray">#989A9F</color>
-
     <color name="light_black">#1F2024</color>
+
+    <!-- these color are used for shimmer layouts-->
+    <color name= "light_gray">#B3B3B3</color>
+    <color name= "start_light_gray">#22B3B3B3</color>
+    <color name= "end_light_gray">#B3B3B3</color>
+
 
 </resources>

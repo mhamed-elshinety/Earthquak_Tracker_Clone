@@ -3,6 +3,7 @@ package com.example.earthquaketrackerclone.ui;
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +20,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.earthquaketrackerclone.R;
 import com.example.earthquaketrackerclone.adapters.EarthquakeRecAdapter;
 import com.example.earthquaketrackerclone.data.Assistant;
+import com.example.earthquaketrackerclone.data.Constants;
 import com.example.earthquaketrackerclone.data.ImageDownloader;
 import com.example.earthquaketrackerclone.listeners.OnImageDownloadListener;
 import com.example.earthquaketrackerclone.pojo.EarthquakeModel;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -32,6 +35,9 @@ public class LatestTabFragment extends Fragment implements LatestTabFragmentView
 
     private RecyclerView nearYouRecV;
     private RecyclerView mostRecentRecV;
+    private ShimmerFrameLayout nearYouShimmer;
+    private ShimmerFrameLayout mostRecentShimmer;
+
 
     private TextView magTxv;
     private TextView disTxv;
@@ -39,6 +45,8 @@ public class LatestTabFragment extends Fragment implements LatestTabFragmentView
     private TextView dateTimeTxv;
     private TextView durDaysTxv;
     private ImageView flagImv;
+
+
 
     private LatestTabFragmentPresenter presenter;
 
@@ -58,6 +66,7 @@ public class LatestTabFragment extends Fragment implements LatestTabFragmentView
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         defineViews();
+        startShimmers();
 
         //starting loading data
         presenter.getNearYouEarthquakes();
@@ -66,20 +75,34 @@ public class LatestTabFragment extends Fragment implements LatestTabFragmentView
 
     }
 
+    private void startShimmers() {
+        mostRecentShimmer.startShimmer();
+        nearYouShimmer.startShimmer();
+    }
+
+    private void hideShimmer(ShimmerFrameLayout shimmerLayout) {
+        shimmerLayout.startShimmer();
+        shimmerLayout.setVisibility(View.GONE);
+    }
 
     @Override
     public void getNearYouEarthquakes(ArrayList<EarthquakeModel> earthquakes) {
+        hideShimmer(nearYouShimmer);
         nearYouRecV.setAdapter(new EarthquakeRecAdapter(getContext(), earthquakes, LinearLayout.HORIZONTAL));
         nearYouRecV.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
     }
 
+
+
     @Override
     public void getMostRecentEarthquakes(ArrayList<EarthquakeModel> earthquakes) {
+        hideShimmer(mostRecentShimmer);
         mostRecentRecV.setAdapter(new EarthquakeRecAdapter(getContext(), earthquakes,LinearLayout.HORIZONTAL));
         mostRecentRecV.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));    }
 
     @Override
     public void getSignificantRecentlyEarthquake(EarthquakeModel earthquakeModel) {
+        Log.d(Constants.LOG_KEY_MY_APP, "getSignificantRecentlyEarthquake: ");
         setMag(earthquakeModel.getMag());
         setPlace(earthquakeModel.getPlace());
         setTime(earthquakeModel.getTime());
@@ -105,6 +128,8 @@ public class LatestTabFragment extends Fragment implements LatestTabFragmentView
         dateTimeTxv = requireActivity().findViewById(R.id.date_time_txv);
         durDaysTxv = requireActivity().findViewById(R.id.dur_days_txv);
         flagImv = requireActivity().findViewById(R.id.flag_iv);
+        mostRecentShimmer = requireActivity().findViewById(R.id.most_recent_earthquakes_shimmer);
+        nearYouShimmer = requireActivity().findViewById(R.id.near_you_earthquakes_shimmer);
     }
 
     //setting time
